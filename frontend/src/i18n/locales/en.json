@@ -1,0 +1,115 @@
+{
+  "common": {
+    "app_name": "React App",
+    "button": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "delete": "Delete",
+      "edit": "Edit",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success"
+  },
+  "pages": {
+    "home": {
+      "title": "Welcome to React + Vite + TypeScript",
+      "description": "This is a full-stack application with NestJS backend and React frontend",
+      "button": {
+        "get_started": "Get Started"
+      }
+    },
+    "nutrition_chat": {
+      "title": "Nutrition Assistant",
+      "subtitle": "Upload a food image and ask about its nutrition",
+      "clear_chat": "Clear Chat",
+      "analyzing": "Analyzing image...",
+      "thinking": "Thinking..."
+    }
+  },
+  "nutrition_chat": {
+    "title": "Nutrition Assistant",
+    "description": "Upload a food image or nutrition label and ask questions about its nutritional content",
+    "actions": {
+      "clear_session": "Start New Session"
+    },
+    "upload": {
+      "title": "Upload Food Image",
+      "description": "Take a photo or upload a nutrition label",
+      "drag_drop": "Drag & drop an image here",
+      "or": "or",
+      "browse": "Browse Files",
+      "click_to_upload": "Click to upload",
+      "file_info": "Supported: JPG, PNG, WEBP (max 10MB)",
+      "supported_formats": "Supported: JPG, PNG, WEBP (max 10MB)",
+      "analyze_button": "Analyze Image",
+      "analyzing": "Analyzing image...",
+      "error": {
+        "invalid_type": "Only JPG, JPEG, PNG, and WEBP images are supported",
+        "file_too_large": "File size must be less than 10MB"
+      }
+    },
+    "chat": {
+      "input_placeholder": "Ask about nutrition...",
+      "input_hint": "Press Enter to send, Shift+Enter for new line",
+      "send": "Send",
+      "no_session": "Upload an image to start chatting",
+      "example_questions": "Example questions:",
+      "examples": {
+        "calories": "How many calories per serving?",
+        "protein": "How much protein does this have?",
+        "healthy": "Is this healthy?",
+        "sodium": "Is the sodium level high?"
+      }
+    },
+    "nutrition_facts": {
+      "title": "Nutrition Facts",
+      "serving_size": "Serving Size",
+      "servings_per_container": "Servings Per Container",
+      "amount_per_serving": "Amount Per Serving",
+      "calories": "Calories",
+      "daily_value": "% Daily Value",
+      "total_fat": "Total Fat",
+      "saturated_fat": "Saturated Fat",
+      "trans_fat": "Trans Fat",
+      "cholesterol": "Cholesterol",
+      "sodium": "Sodium",
+      "total_carbohydrates": "Total Carbohydrates",
+      "dietary_fiber": "Dietary Fiber",
+      "total_sugars": "Total Sugars",
+      "added_sugars": "Added Sugars",
+      "protein": "Protein",
+      "vitamin_d": "Vitamin D",
+      "calcium": "Calcium",
+      "iron": "Iron",
+      "potassium": "Potassium",
+      "daily_value_note": "* The % Daily Value tells you how much a nutrient contributes to a daily diet. 2,000 calories a day is used for general nutrition advice."
+    },
+    "errors": {
+      "upload_failed": "Failed to upload image",
+      "analysis_failed": "Failed to analyze image",
+      "send_message_failed": "Failed to send message",
+      "invalid_file": "Invalid file format",
+      "file_too_large": "File size exceeds 10MB",
+      "no_nutrition_data": "No nutrition information detected",
+      "try_again": "Please try again"
+    }
+  },
+  "errors": {
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email",
+      "min_length": "Minimum length is {{min}} characters",
+      "max_length": "Maximum length is {{max}} characters"
+    },
+    "network": {
+      "connection": "Network connection error",
+      "timeout": "Request timeout",
+      "server": "Server error"
+    }
+  }
+}

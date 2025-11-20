@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Example User model
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// Nutrition Chatbot Models
+model Conversation {
+  id        String    @id @default(uuid())
+  userId    String?   // Optional: for future user authentication
+  title     String?   // Auto-generated from first message
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  messages  Message[]
+
+  @@map("conversations")
+}
+
+enum MessageRole {
+  user
+  assistant
+  system
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           MessageRole
+  content        String       @db.Text
+  imageUrl       String?      // If message contains an image
+  ocrText        String?      @db.Text // Extracted text from image via OCR
+  nutritionData  Json?        // Parsed nutrition data as JSON
+  createdAt      DateTime     @default(now())
+
+  @@map("messages")
+  @@index([conversationId])
+}
+
+model UploadedImage {
+  id           String   @id @default(uuid())
+  originalName String
+  filename     String   @unique
+  mimetype     String
+  size         Int
+  path         String   // Local file path
+  url          String   // Accessible URL
+  ocrText      String?  @db.Text // Extracted OCR text
+  createdAt    DateTime @default(now())
+
+  @@map("uploaded_images")
+}

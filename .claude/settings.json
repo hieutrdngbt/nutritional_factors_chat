@@ -1,0 +1,270 @@
+{
+  "description": "Claude Code settings for Node.js + React/Vite TypeScript full-stack project",
+
+  "projectContext": {
+    "type": "full-stack",
+    "backend": {
+      "framework": "Node.js",
+      "language": "TypeScript",
+      "packageManager": "yarn"
+    },
+    "frontend": {
+      "framework": "React + Vite",
+      "language": "TypeScript",
+      "packageManager": "yarn"
+    },
+    "i18n": {
+      "enabled": true,
+      "languages": ["en", "vi"],
+      "rules": [
+        "No hardcoded text allowed",
+        "Only use defined i18n keys",
+        "All user-facing text must be internationalized"
+      ]
+    },
+    "database": {
+      "migrations": {
+        "immutable": true,
+        "note": "NEVER modify or delete existing migration files"
+      }
+    }
+  },
+
+  "codeStyle": {
+    "naming": {
+      "variables": "camelCase",
+      "functions": "camelCase",
+      "classes": "PascalCase",
+      "components": "PascalCase",
+      "constants": "UPPER_SNAKE_CASE",
+      "interfaces": "PascalCase with I prefix (optional)",
+      "types": "PascalCase"
+    },
+    "typescript": {
+      "strict": true,
+      "noImplicitAny": true,
+      "avoidAnyType": true,
+      "preferInterfaces": "for object shapes",
+      "preferTypes": "for unions and complex types"
+    },
+    "imports": {
+      "order": [
+        "external packages",
+        "internal modules",
+        "relative imports",
+        "types",
+        "styles"
+      ],
+      "preferNamedExports": true
+    }
+  },
+
+  "bestPractices": {
+    "security": [
+      "Always validate and sanitize user input",
+      "Never expose sensitive data in error messages",
+      "Use environment variables for secrets",
+      "Implement proper authentication and authorization",
+      "Prevent SQL injection, XSS, CSRF",
+      "Use security headers (helmet.js for Express)",
+      "Implement rate limiting",
+      "Hash passwords with bcrypt or argon2"
+    ],
+    "testing": [
+      "Write tests for new features",
+      "Aim for high test coverage on critical paths",
+      "Use Jest/Vitest for unit tests",
+      "Use React Testing Library for component tests",
+      "Use Supertest for API testing",
+      "Follow AAA pattern (Arrange, Act, Assert)"
+    ],
+    "errorHandling": [
+      "Use try-catch for async operations",
+      "Create custom error classes",
+      "Log errors appropriately",
+      "Return consistent error responses",
+      "Don't expose stack traces in production"
+    ],
+    "performance": {
+      "frontend": [
+        "Use React.memo for expensive components",
+        "Use useMemo and useCallback appropriately",
+        "Lazy load routes and components",
+        "Optimize images and assets",
+        "Minimize bundle size"
+      ],
+      "backend": [
+        "Implement caching where appropriate",
+        "Optimize database queries",
+        "Avoid N+1 queries",
+        "Use indexes on frequently queried fields",
+        "Implement pagination for large datasets"
+      ]
+    },
+    "architecture": {
+      "backend": [
+        "Layer your application (routes, controllers, services, repositories)",
+        "Use dependency injection where appropriate",
+        "Keep controllers thin",
+        "Put business logic in services",
+        "Use middleware for cross-cutting concerns"
+      ],
+      "frontend": [
+        "Organize by feature, not by type",
+        "Keep components small and focused",
+        "Extract custom hooks for reusable logic",
+        "Use context sparingly",
+        "Consider state management library for complex state"
+      ]
+    }
+  },
+
+  "fileStructure": {
+    "backend": {
+      "suggested": [
+        "src/",
+        "  ├── config/         # Configuration files",
+        "  ├── controllers/    # Request handlers",
+        "  ├── services/       # Business logic",
+        "  ├── repositories/   # Data access layer",
+        "  ├── models/         # Data models/schemas",
+        "  ├── middlewares/    # Express middlewares",
+        "  ├── routes/         # API routes",
+        "  ├── utils/          # Utility functions",
+        "  ├── types/          # TypeScript types/interfaces",
+        "  ├── validators/     # Input validation schemas",
+        "  └── app.ts          # Express app setup",
+        "  └── server.ts       # Server entry point",
+        "tests/",
+        "migrations/           # Database migrations (immutable)"
+      ]
+    },
+    "frontend": {
+      "suggested": [
+        "src/",
+        "  ├── components/     # Reusable components",
+        "  ├── pages/          # Page components",
+        "  ├── hooks/          # Custom React hooks",
+        "  ├── services/       # API services",
+        "  ├── utils/          # Utility functions",
+        "  ├── types/          # TypeScript types",
+        "  ├── contexts/       # React contexts",
+        "  ├── store/          # State management",
+        "  ├── assets/         # Static assets",
+        "  ├── i18n/           # Translation files",
+        "  │   ├── en.json",
+        "  │   └── vi.json",
+        "  └── App.tsx",
+        "  └── main.tsx"
+      ]
+    }
+  },
+
+  "dependencies": {
+    "backend": {
+      "recommended": [
+        "express - Web framework",
+        "typescript - Type safety",
+        "dotenv - Environment variables",
+        "cors - CORS middleware",
+        "helmet - Security headers",
+        "express-rate-limit - Rate limiting",
+        "joi or zod - Validation",
+        "bcrypt or argon2 - Password hashing",
+        "jsonwebtoken - JWT authentication",
+        "prisma or typeorm - ORM",
+        "winston or pino - Logging"
+      ],
+      "testing": [
+        "jest - Test framework",
+        "supertest - API testing",
+        "@types/* - TypeScript definitions"
+      ]
+    },
+    "frontend": {
+      "recommended": [
+        "react - UI library",
+        "react-router-dom - Routing",
+        "axios or fetch wrapper - HTTP client",
+        "react-i18next or similar - i18n",
+        "zustand or redux - State management (if needed)",
+        "react-hook-form - Form handling",
+        "zod - Validation",
+        "tailwindcss or styled-components - Styling"
+      ],
+      "testing": [
+        "vitest - Test framework",
+        "@testing-library/react - Component testing",
+        "@testing-library/user-event - User interaction testing",
+        "@testing-library/jest-dom - DOM matchers"
+      ]
+    }
+  },
+
+  "environmentVariables": {
+    "backend": [
+      "NODE_ENV - Environment (development/production)",
+      "PORT - Server port",
+      "DATABASE_URL - Database connection string",
+      "JWT_SECRET - JWT signing secret",
+      "JWT_EXPIRES_IN - JWT expiration time",
+      "CORS_ORIGIN - Allowed CORS origins",
+      "LOG_LEVEL - Logging level"
+    ],
+    "frontend": [
+      "VITE_API_BASE_URL - Backend API URL",
+      "VITE_APP_NAME - Application name"
+    ],
+    "note": "NEVER commit .env files. Use .env.example as template"
+  },
+
+  "scripts": {
+    "backend": {
+      "dev": "Development server with hot reload",
+      "build": "Build for production",
+      "start": "Start production server",
+      "test": "Run tests",
+      "test:watch": "Run tests in watch mode",
+      "test:coverage": "Run tests with coverage",
+      "lint": "Run ESLint",
+      "lint:fix": "Fix ESLint errors",
+      "typecheck": "TypeScript type checking",
+      "migrate": "Run database migrations"
+    },
+    "frontend": {
+      "dev": "Development server",
+      "build": "Build for production",
+      "preview": "Preview production build",
+      "test": "Run tests",
+      "test:watch": "Run tests in watch mode",
+      "test:coverage": "Run tests with coverage",
+      "lint": "Run ESLint",
+      "lint:fix": "Fix ESLint errors",
+      "typecheck": "TypeScript type checking"
+    }
+  },
+
+  "gitWorkflow": {
+    "commitMessage": {
+      "format": "type(scope): description",
+      "types": [
+        "feat - New feature",
+        "fix - Bug fix",
+        "docs - Documentation",
+        "style - Formatting",
+        "refactor - Code refactoring",
+        "test - Tests",
+        "chore - Maintenance"
+      ]
+    },
+    "branchNaming": "feature/*, bugfix/*, hotfix/*"
+  },
+
+  "editorPreferences": {
+    "indentation": "2 spaces",
+    "lineLength": 100,
+    "quotes": "single",
+    "semicolons": true,
+    "trailingComma": "es5"
+  }
+}

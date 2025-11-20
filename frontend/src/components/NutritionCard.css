@@ -1,0 +1,109 @@
+.nutrition-card {
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  max-width: 350px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-header {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 10px solid #000;
+}
+
+.nutrition-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+}
+
+.nutrition-body {
+  padding: 0.5rem 0.75rem;
+}
+
+.nutrient-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.nutrient-row.bold {
+  font-weight: 700;
+}
+
+.nutrient-row.indent-1 {
+  padding-left: 1rem;
+}
+
+.nutrient-row.indent-2 {
+  padding-left: 2rem;
+}
+
+.nutrient-label {
+  flex: 1;
+}
+
+.nutrient-value {
+  font-weight: 600;
+}
+
+.servings-per-container {
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+}
+
+.calories-section {
+  margin: 0.5rem 0;
+}
+
+.calories-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.calories-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.calories-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.daily-value-header {
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0;
+}
+
+.daily-value-note {
+  font-size: 0.7rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #000;
+}
+
+.daily-value-note p {
+  margin: 0;
+}
+
+/* Dividers */
+.thick-divider {
+  border-bottom: 10px solid #000;
+  margin: 0.25rem 0;
+}
+
+.medium-divider {
+  border-bottom: 5px solid #000;
+  margin: 0.25rem 0;
+}
+
+.thin-divider {
+  border-bottom: 1px solid #000;
+  margin: 0.25rem 0;
+}
